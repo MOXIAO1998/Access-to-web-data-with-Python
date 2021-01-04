@@ -16,7 +16,7 @@ ctx.verify_mode = ssl.CERT_NONE
 
 url = input('Enter - ')
 html = urllib.request.urlopen(url, context=ctx).read()
-sout = BeautifulSoup(html, 'html.parser')
+soup = BeautifulSoup(html, 'html.parser')
 
 #Retrieve all of the achor tags
 tags = soup('a')
