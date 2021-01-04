@@ -1,0 +1,17 @@
+import re
+handle = open('regex_sum_1104902.txt')
+
+numlst = list()
+for line in handle:
+    line = line.rstrip()
+    if re.search('[0-9]+', line):
+        num_lst = re.findall('([0-9]+)', line)
+        for number in num_lst:
+            numlst.append(int(number))
+print(sum(numlst))
+        
+#        for number in range(len(num_lst)):
+#            fnum = float(num_lst[number])
+#            numlst.append(fnum)
+#print(sum(numlst))
+
