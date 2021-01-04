@@ -76,12 +76,12 @@ soup = BeautifulSoup(html, 'html.parser')
 # Retrieve all of the anchor tags
 Sequence = []
 tags = soup('a')
-for i in range(count):
-    link = tags[position].get('href', None)
-    print("Retrieving:",link)
-    Sequence.append(tags[position].contents[0])
-    html = urllib.request.urlopen(link, context=ctx).read()
-    soup = BeautifulSoup(html, 'html.parser')
-    tags = soup('a')
-    link = tags[position].get('href', None)
+for i in range(count):                                              # (0-6)
+    link = tags[position].get('href', None)                         # pick the required 18th link in the original/18th of original link/ 18th of 18th of the original link
+    print("Retrieving:",link)                                       # print the 18th link
+    Sequence.append(tags[position].contents[0])                     # append the name in the Sequence.list
+    html = urllib.request.urlopen(link, context=ctx).read()         # access the 18th link of original link/ 18th link of 18th link of original link
+    soup = BeautifulSoup(html, 'html.parser')                       # parse
+    tags = soup('a')                                                # all links in the page
+    link = tags[position].get('href', None)                         # pick the 18th link of the 18th link
 print(Sequence[-1])
